@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<stdlib.h>
 
 // selectionSort function ko define karte hain jo array ko sort karega
 void selectionSort(int arr[], int n) {
