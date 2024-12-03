@@ -34,7 +34,17 @@ int main() {
                         break;
                 }
 
-            
+                case 3:
+                // insert at position
+                printf("Enter value:");
+                scanf("%d", &val);
+                printf("Enter position:");
+                scanf("%d", &pos);
+                for(i=pos;i>=0;i--){
+                    arr[i+1]=arr[i];
+                }
+                arr[pos]=val;
+                pos++;
                 
                break;
                 
