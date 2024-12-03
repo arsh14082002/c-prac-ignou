@@ -1,17 +1,17 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct Node
-{
+struct Node{
     int data;
     struct Node *next;
+    struct Node *prev;
 };
 
-void createNode(struct Node **head, int val){
+void createDoublyLinkedList(struct Node **head, int val){
     struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = val;
     newNode->next = NULL;
-
+    newNode->prev = NULL;
     if(*head == NULL){
         *head = newNode;
     }
@@ -21,10 +21,11 @@ void createNode(struct Node **head, int val){
             temp = temp->next;
         }
         temp->next = newNode;
+        newNode->prev = temp;
     }
 }
 
-void deleteNode(struct Node **head, int val){
+void deleteDoublyLinkedList(struct Node **head, int val){
     struct Node *temp = *head;
     struct Node *prev = NULL;
     if(temp != NULL && temp->data == val){
@@ -43,7 +44,7 @@ void deleteNode(struct Node **head, int val){
     free(temp);
 }
 
-void searchNode(struct Node *head, int val){
+void searchDoublyLinkedList(struct Node *head, int val){
     struct Node *temp = head;
     while(temp != NULL){
         if(temp->data == val){
@@ -55,7 +56,7 @@ void searchNode(struct Node *head, int val){
     printf("Not Found\n");
 }
 
-void showNode(struct Node *head){
+void showDoublyLinkedList(struct Node *head){
     struct Node *temp = head;
     printf("HEAD");
     while(temp != NULL){
@@ -65,17 +66,15 @@ void showNode(struct Node *head){
     printf("-> NULL\n");
 }
 
-
 int main(){
     struct Node *head = NULL;
-    createNode(&head, 10);
-    createNode(&head, 20);
-    createNode(&head, 30);
-    createNode(&head, 40);
-    createNode(&head, 50);
-    deleteNode(&head, 20);
-    searchNode(head, 30);
-
-    showNode(head);
+    createDoublyLinkedList(&head, 10);
+    createDoublyLinkedList(&head, 20);
+    createDoublyLinkedList(&head, 30);
+    createDoublyLinkedList(&head, 40);
+    createDoublyLinkedList(&head, 50);
+    deleteDoublyLinkedList(&head, 20);
+    searchDoublyLinkedList(head, 30);
+    showDoublyLinkedList(head);
     return 0;
 }
