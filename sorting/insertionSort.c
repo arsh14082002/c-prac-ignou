@@ -1,3 +1,24 @@
+/*
+Algorithm: Insertion Sort
+
+1. Start with the second element of the array, as the first element is considered already sorted.
+2. For each element from the second to the last:
+   a. Store the current element (called the "key").
+   b. Compare the key with the elements in the sorted part of the array (to the left of the key).
+   c. Shift all elements larger than the key one position to the right to make space for the key.
+3. Insert the key into the correct position in the sorted part of the array.
+4. Repeat this process for all elements in the array.
+5. The array will be sorted by the end of the iterations.
+
+Time Complexity:
+- Worst Case: O(n^2) (when the array is sorted in reverse order).
+- Best Case: O(n) (when the array is already sorted).
+
+Space Complexity:
+- O(1) (Insertion sort is an in-place sorting algorithm, meaning it does not require additional memory except for a constant amount).
+
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 

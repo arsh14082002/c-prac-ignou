@@ -1,3 +1,31 @@
+/*
+Algorithm: Selection Sort
+
+1. Start with the first element in the array (index 0).
+   
+2. Find the smallest element in the unsorted part of the array (starting from the current element to the last element):
+   a. Compare each element with the current minimum element.
+   b. If a smaller element is found, update the minimum element index (`minIndex`).
+
+3. After finding the minimum element, swap it with the element at the current position (`i`):
+   a. If the `minIndex` is different from the current index `i`, perform the swap.
+   b. This places the smallest element at the correct sorted position in the array.
+
+4. Repeat this process for each element, moving from the start to the second-last element of the array (as the last element will naturally be in place).
+
+5. Continue the process until the whole array is sorted.
+
+Time Complexity:
+- Worst Case: O(n^2) (When the array is in reverse order and every element needs to be compared with all other elements).
+- Best Case: O(n^2) (Even if the array is already sorted, Selection Sort still performs all comparisons).
+- Average Case: O(n^2) (The algorithm makes n^2 comparisons in all cases).
+
+Space Complexity:
+- O(1) (Selection Sort is an in-place sorting algorithm, so it does not require any additional space except for a few variables).
+
+*/
+
+
 #include<stdio.h>
 
 // selectionSort function ko define karte hain jo array ko sort karega

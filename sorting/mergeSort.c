@@ -1,3 +1,27 @@
+/*
+Algorithm: Merge Sort
+
+1. Divide the array into two halves:
+   a. Find the middle point (`mid`), dividing the array into left and right sub-arrays.
+   b. Recursively apply the merge sort on both the left and right sub-arrays.
+
+2. Merge the two halves:
+   a. Create temporary arrays to store the left and right halves.
+   b. Compare the elements of both halves, and merge them in a sorted order into the original array.
+
+3. Repeat the process until the sub-arrays have only one element, at which point they are considered sorted.
+
+4. The result is a fully sorted array.
+
+Time Complexity:
+- Worst Case: O(n log n) (This occurs in all cases since the array is divided and merged log(n) times).
+- Best Case: O(n log n) (Even if the array is already sorted, the algorithm still divides and merges the array recursively).
+
+Space Complexity:
+- O(n) (Merge Sort requires extra space for temporary arrays used during the merging process).
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 

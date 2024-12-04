@@ -1,8 +1,107 @@
+/*
+Algorithm: Linked List Basic Operations
+
+A linked list is a linear data structure where elements (nodes) are connected using pointers. Each node contains:
+1. **Data**: Holds the value of the node.
+2. **Next**: Points to the next node in the list.
+
+Basic Operations on a Linked List:
+
+1. **Insert at End**:
+   - Create a new node with the given value.
+   - If the list is empty (head is NULL), set the head to the new node.
+   - Otherwise, traverse the list to the last node.
+   - Set the `next` pointer of the last node to the new node.
+
+   **Time Complexity**: O(n) (Traversal to the last node)
+   
+2. **Insert at Start**:
+   - Create a new node with the given value.
+   - Set the `next` pointer of the new node to the current head (the first node).
+   - Update the head to the new node.
+
+   **Time Complexity**: O(1) (Direct insertion at the beginning)
+
+3. **Insert at Position**:
+   - Create a new node with the given value.
+   - Traverse the list to the node just before the given position.
+   - Set the `next` pointer of the new node to point to the next node of the previous node.
+   - Update the `next` pointer of the previous node to point to the new node.
+
+   **Time Complexity**: O(n) (Traversal to the specific position)
+
+4. **Delete at End**:
+   - If the list is empty, there's nothing to delete.
+   - Traverse the list to the second-to-last node.
+   - Set the `next` pointer of the second-to-last node to NULL, effectively removing the last node.
+   - Free the memory allocated for the last node.
+
+   **Time Complexity**: O(n) (Traversal to the last node)
+
+5. **Delete at Start**:
+   - If the list is empty, there's nothing to delete.
+   - Set the head to point to the second node (i.e., the node after the current head).
+   - Free the memory allocated for the original head node.
+
+   **Time Complexity**: O(1) (Direct removal of the first node)
+
+6. **Delete at Position**:
+   - Traverse the list to the node just before the given position.
+   - Update the `next` pointer of the previous node to point to the node after the one to be deleted.
+   - Free the memory allocated for the node to be deleted.
+
+   **Time Complexity**: O(n) (Traversal to the specific position)
+
+7. **Traverse/Display the List**:
+   - Start from the head node.
+   - Print the data of each node as you traverse through the list until you reach the last node (where `next` is NULL).
+
+   **Time Complexity**: O(n) (Traversal through the entire list)
+
+8. **Size of the List**:
+   - Traverse through the list, incrementing a counter for each node encountered.
+   - Once the last node is reached (i.e., `next` is NULL), the counter will hold the size of the list.
+
+   **Time Complexity**: O(n) (Traversal through the entire list)
+
+9. **Reverse the List**:
+   - Initialize three pointers: `prev` as NULL, `current` as the head, and `next` as NULL.
+   - Traverse the list while reversing the direction of the links.
+     - Set `next` to the `next` of `current`.
+     - Set `current->next` to `prev`.
+     - Move `prev` to `current` and `current` to `next`.
+   - After the traversal, set the head to `prev`, which will be the new head of the reversed list.
+
+   **Time Complexity**: O(n) (Traversal to reverse the pointers)
+
+10. **Search for an Element**:
+    - Traverse the list, comparing each node's data with the value to be searched.
+    - If a match is found, return the node or its position.
+    - If the traversal completes without finding the element, indicate that the element is not in the list.
+
+    **Time Complexity**: O(n) (Traversal through the list to find the element)
+
+Time Complexity for Operations:
+- Insert at End: O(n)
+- Insert at Start: O(1)
+- Insert at Position: O(n)
+- Delete at End: O(n)
+- Delete at Start: O(1)
+- Delete at Position: O(n)
+- Traverse/Display: O(n)
+- Size: O(n)
+- Reverse: O(n)
+- Search: O(n)
+
+Space Complexity: 
+- The space complexity is O(n), where `n` is the number of nodes in the list, as each node requires memory for both its data and its pointer.
+
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 
-struct Node
-{
+struct Node {
     int data;
     struct Node *next;
 };

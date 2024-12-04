@@ -1,7 +1,32 @@
+/*
+Algorithm: Heap Sort
+
+1. Build a max-heap from the given array:
+   a. A max-heap is a binary tree where the parent node is greater than or equal to its children.
+   b. This is done by calling the heapify function on each non-leaf node, starting from the last non-leaf node to the root.
+
+2. Swap the root element (the maximum element) with the last element in the array:
+   a. The largest element is now placed at the end of the array.
+   b. Reduce the heap size by 1.
+
+3. Heapify the remaining heap to maintain the max-heap property:
+   a. Recursively heapify the root element until the heap property is restored for the remaining elements.
+
+4. Repeat the above two steps until the heap size is reduced to 1, i.e., the array is fully sorted.
+
+Time Complexity:
+- Worst Case: O(n log n) (this occurs for both average and worst-case scenarios).
+- Best Case: O(n log n) (the performance remains the same regardless of input ordering due to the nature of the algorithm).
+
+Space Complexity:
+- O(1) (heap sort is an in-place sorting algorithm, meaning it does not require additional memory except for a constant amount for auxiliary operations).
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
-// Function prototypes declare kar rahe hain (aage functions ka use ho sake)
+
 void heapify(int arr[], int n, int i);
 void swap(int *a, int *b);
 

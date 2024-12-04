@@ -1,11 +1,31 @@
+
+/*
+Algorithm: Bubble Sort
+
+1. Start with an unsorted array.
+2. Loop through the entire array multiple times:
+   a. In each iteration, compare adjacent elements of the array.
+   b. If an element is larger than the one next to it, swap them.
+3. If in a particular pass, no swaps are made (indicating the array is already sorted), break the loop early.
+4. The array will be sorted by the end of the iterations.
+
+Time Complexity:
+- Worst Case: O(n^2) (when the array is sorted in reverse order).
+- Best Case: O(n) (when the array is already sorted).
+
+Space Complexity:
+- O(1) (constant space since the sorting is done in-place).
+
+*/
+
 #include<stdio.h>
 
 int bubbleSort(int arr[], int n){
     int i, j, temp, x;
 
-    for(i=0;i<n-1;i++){
+    for(i=0; i<n-1; i++){
         x = 0;
-        for(j=0;j<n-i-1;j++){
+        for(j=0; j<n-i-1; j++){
             if(arr[j]>arr[j+1]){
                 temp = arr[j];
                 arr[j] = arr[j+1];
@@ -25,14 +45,9 @@ int main(){
 
     bubbleSort(arr, n);
 
-    for(int i=0;i<n;i++){
+    for(int i=0; i<n; i++){
         printf("%d ", arr[i]);
     }
 
     return 0;
 }
-
-// time complexity: worst case: O(n^2)
-// time complexity: best case: O(n)
-
-// space complexity: O(1)
