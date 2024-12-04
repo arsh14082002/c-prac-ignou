@@ -1,3 +1,57 @@
+/*
+    Algorithm for Array Operations:
+
+    1. **Insert at End**:
+        - Check if the array has reached its maximum size (MAX_SIZE).
+        - If not, increment the `pos` variable and insert the value at the last position (`arr[pos]`).
+
+    2. **Insert at Beginning**:
+        - Check if the array is full.
+        - If not, shift all elements to the right by one position starting from the end of the array.
+        - Insert the new value at the start (`arr[0]`).
+        - Increment the `pos` variable.
+
+    3. **Insert at Position**:
+        - Check if the array is full.
+        - If not, shift all elements starting from the position to the right.
+        - Insert the new value at the specified position (`arr[position]`).
+        - Increment the `pos` variable.
+
+    4. **Delete from End**:
+        - Check if the array is empty (i.e., `pos` is -1).
+        - If not, simply decrement the `pos` variable to remove the last element.
+
+    5. **Delete from Beginning**:
+        - Check if the array is empty.
+        - If not, shift all elements to the left by one position, starting from index 1 to the last position.
+        - Decrement the `pos` variable.
+
+    6. **Delete from Position**:
+        - Check if the array is empty.
+        - If not, shift all elements from the specified position to the left by one position.
+        - Decrement the `pos` variable.
+
+    7. **Traverse the Array**:
+        - If the array is not empty, iterate through the array from index 0 to `pos` and print each element.
+        - If the array is empty, print "Array is empty!".
+
+    8. **Sort the Array in Ascending Order**:
+        - Use the Bubble Sort algorithm to sort the array in ascending order.
+        - If the array is empty, print "Array is empty!".
+
+    9. **Menu System**:
+        - Provide the user with a menu to choose various operations: Insert, Delete, Traverse, Sort, or Exit.
+        - For each choice, execute the corresponding operation, and loop until the user chooses to exit.
+
+    10. **Exit Program**:
+        - When the user selects the exit option (choice 6), print a message and end the program.
+
+    **Note**:
+    - The `pos` variable keeps track of the index of the last inserted element.
+    - The array has a fixed maximum size (`MAX_SIZE`), and operations will check for overflow/underflow conditions.
+    - Invalid input is handled with appropriate messages.
+*/
+
 #include <stdio.h>
 
 #define MAX_SIZE 10

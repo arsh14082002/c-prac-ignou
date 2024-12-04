@@ -1,3 +1,79 @@
+/*
+    Algorithm for Doubly Linked List Operations:
+
+    1. **Insert at End:**
+        - Create a new node with the given value.
+        - If the list is empty (head is NULL):
+            - Set the head pointer to the new node.
+        - If the list is not empty:
+            - Traverse to the last node of the list.
+            - Set the `next` pointer of the last node to the new node.
+            - Set the `prev` pointer of the new node to the last node.
+
+    2. **Insert at Start:**
+        - Create a new node with the given value.
+        - If the list is empty (head is NULL):
+            - Set the head pointer to the new node.
+        - If the list is not empty:
+            - Set the `next` pointer of the new node to the current head node.
+            - Set the `prev` pointer of the current head node to the new node.
+            - Update the head pointer to point to the new node.
+
+    3. **Insert at Position:**
+        - Create a new node with the given value.
+        - If the list is empty (head is NULL), treat it like an insert at the start.
+        - Traverse to the given position.
+        - Set the `next` pointer of the new node to the node currently at that position.
+        - Set the `prev` pointer of the node at the given position to the new node.
+        - Update the `prev` pointer of the previous node to the new node.
+
+    4. **Delete at Start:**
+        - If the list is not empty:
+            - Set the head pointer to the second node.
+            - Free the memory of the previous head node.
+        - If the list is empty, display a "List is empty" message.
+
+    5. **Delete at End:**
+        - If the list is not empty:
+            - Traverse to the last node.
+            - Set the `next` pointer of the second last node to NULL.
+            - Free the memory of the last node.
+        - If the list is empty, display a "List is empty" message.
+
+    6. **Delete at Position:**
+        - If the list is not empty:
+            - Traverse to the given position.
+            - Adjust the `next` and `prev` pointers of the surrounding nodes to remove the node at the given position.
+            - Free the memory of the node at the given position.
+        - If the position is invalid (out of range), display an "Invalid position" message.
+
+    7. **Search Node:**
+        - Traverse through the list and compare the data of each node with the given value.
+        - If the value is found, print the node data and return.
+        - If the value is not found, display a "Not Found" message.
+
+    8. **Reverse the List:**
+        - Traverse through the list and reverse the `next` and `prev` pointers of each node.
+        - After the loop ends, update the head pointer to point to the new first node.
+
+    9. **Size of the List:**
+        - Traverse through the list and count the number of nodes.
+        - Display the size of the list.
+
+    10. **Traverse (Show the List):**
+        - Traverse through the list and print the data of each node.
+        - Display the list starting from the head to the last node.
+
+    **Time Complexity:**
+        - Insertion (at any position): O(n) - Traverse through the list to find the desired position.
+        - Deletion (at any position): O(n) - Traverse through the list to find the node to delete.
+        - Search: O(n) - Traverse through the list to find the element.
+        - Reverse: O(n) - Traverse through the list to reverse the pointers.
+        - Size: O(n) - Traverse through the list to count the nodes.
+        - Show: O(n) - Traverse through the list to display the nodes.
+*/
+
+
 #include<stdio.h>
 #include<stdlib.h>
 

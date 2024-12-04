@@ -1,3 +1,74 @@
+/*
+    Algorithm for AVL Tree Operations:
+
+    1. **Node Structure**:
+        - Each node contains:
+            - `data`: The value of the node.
+            - `left`: A pointer to the left child node.
+            - `right`: A pointer to the right child node.
+            - `height`: The height of the node, used to calculate balance.
+
+    2. **Height Function**:
+        - The height of a node is defined as the number of edges on the longest path from the node to a leaf.
+        - If the node is `NULL`, return a height of 0.
+        - Otherwise, return the height of the node.
+
+    3. **Max Function**:
+        - A utility function to return the maximum of two values.
+
+    4. **Balance Factor**:
+        - The balance factor is calculated as the difference between the heights of the left and right subtrees.
+        - If the balance factor is positive, the left subtree is higher; if negative, the right subtree is higher.
+        - A balance factor of `0` means the tree is balanced.
+
+    5. **Right Rotation**:
+        - Right rotation is performed when the left subtree is higher and causes imbalance in the tree.
+        - The left child becomes the new root, and the original root becomes its right child.
+        - Heights of affected nodes are updated.
+
+    6. **Left Rotation**:
+        - Left rotation is performed when the right subtree is higher and causes imbalance.
+        - The right child becomes the new root, and the original root becomes its left child.
+        - Heights of affected nodes are updated.
+
+    7. **Insert Operation**:
+        - A new node is inserted by comparing the value with the current node’s data and deciding whether to insert in the left or right subtree.
+        - After insertion, the height of each node is updated, and the balance factor is calculated.
+        - Depending on the balance factor, appropriate rotations (left or right) are performed to maintain the AVL tree properties.
+        - The four cases for rebalancing are:
+            1. **Left-Left case**: Right rotate.
+            2. **Right-Right case**: Left rotate.
+            3. **Left-Right case**: Left rotate on the left child, then right rotate on the current node.
+            4. **Right-Left case**: Right rotate on the right child, then left rotate on the current node.
+
+    8. **Preorder Traversal**:
+        - Traverse the tree in root-left-right order.
+        - Print the data at each node.
+
+    9. **Inorder Traversal**:
+        - Traverse the tree in left-root-right order.
+        - Print the data at each node.
+        - In AVL tree, inorder traversal gives nodes in sorted order.
+
+    10. **Postorder Traversal**:
+        - Traverse the tree in left-right-root order.
+        - Print the data at each node.
+
+    11. **Level Order Traversal (BFS)**:
+        - This approach uses breadth-first traversal to print the tree level by level, though in this code it uses recursion for simplicity.
+        - Print the root data, then recursively print the left and right subtrees level by level.
+
+    12. **Main Function**:
+        - Insert values into the AVL tree.
+        - Perform different tree traversals (Preorder, Inorder, Postorder, Level-order) and display the results.
+
+    **Note**:
+    - The AVL tree ensures that after every insertion, the tree remains balanced with height differences of no more than 1 between the left and right subtrees.
+    - Rotations (left and right) are used to restore balance whenever necessary.
+
+*/
+
+
 #include<stdio.h>
 #include<stdlib.h>
 
