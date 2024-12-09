@@ -44,7 +44,7 @@
         - For each choice, execute the corresponding operation, and loop until the user chooses to exit.
 
     10. **Exit Program**:
-        - When the user selects the exit option (choice 6), print a message and end the program.
+        - When the user's selects the exit option (choice 6), print a message and end the program.
 
     **Note**:
     - The `pos` variable keeps track of the index of the last inserted element.
